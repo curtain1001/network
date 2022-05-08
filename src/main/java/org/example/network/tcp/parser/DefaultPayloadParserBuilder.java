@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DefaultPayloadParserBuilder implements PayloadParserBuilder, BeanPostProcessor {
 
-	private Map<PayloadParserType, PayloadParserBuilderStrategy> strategyMap = new ConcurrentHashMap<>();
+	private final Map<PayloadParserType, PayloadParserBuilderStrategy> strategyMap = new ConcurrentHashMap<>();
 
 	public DefaultPayloadParserBuilder() {
 		register(new FixLengthPayloadParserBuilder());
